@@ -131,6 +131,7 @@ def patch_json_for_multicluster_configuration(content, multicluster_key):
             if line.endswith('{}') or line.endswith('[]'):
                 content_array.append(line[:-1])
                 content_array.append('')
+                
                 content_array.append(' ' * (len(line) - len(line.lstrip())) + line[-1] + append)
 
         content = '\n'.join(content_array)
